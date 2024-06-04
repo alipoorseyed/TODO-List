@@ -1,0 +1,13 @@
+@mixin respond-to($breakpoin){
+    @media (max-width: $breakpoin) {
+         @content; 
+        } 
+}
+
+@mixin display($justify,$align,$direction){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    @content
+}
