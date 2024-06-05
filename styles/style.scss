@@ -1,0 +1,167 @@
+@import "_mixin.scss";
+
+@font-face {
+    font-family: 'Yekan';
+    src: url('./fonts/B_Yekan/Yekan.ttf')format('truetype');
+}
+
+
+@include respond-to(4000px){
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    };
+    
+    body{
+        direction: rtl;
+        font-family: 'Yekan';
+        color: #FFFFFF;
+    }
+    
+    .span-div{
+        width: 100%;
+    }
+
+
+    main{
+        width: 100%;
+        padding: 1.25rem 1.25rem;
+        min-height: 100vh;
+        @include display(flex-start,stretch,row);
+
+
+        .aside-div{
+            width: 272px;
+             padding : 1.5rem 0rem;
+            @include display(space-between,flex-start,column);
+            color:  #FFFFFF;  
+            box-shadow: 0px 4px 58.5px 0px #0000000F;
+            border-radius: 16px;
+            .start-aside{
+                padding : 0rem 2.2rem;
+                width: 100%;
+                @include display(flex-start,center,row);
+                gap: 1rem;
+
+                img{
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .start-aside-def{
+                    @include display(center,flex-start,column);
+                    gap: .1rem;
+
+                    h4{
+                        font-size: 18px;
+                        font-weight: 800;
+                        text-align: right;
+                        color: #242424;
+                    }
+
+                    p{
+                        font-size: 14px;
+                        font-weight: 600px;
+                        color: #7D7D7F;                        ;
+                    }
+                }
+            }
+
+
+            .mid-aside{
+                padding : 0rem 1.2rem;
+                width: 100%;
+                @include display(space-between,flex-start,column);
+                gap: .7rem;
+
+                a{
+                    width: 100%;
+                    @include display(flex-start,center,row);
+                    padding: .75rem 1.2rem .75rem 0;
+                    border-radius: 8px;
+                    gap: 1rem;
+                    text-decoration: none;
+                    p{
+                        color: #525252;
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+
+                    &:hover{
+                        background-color: #F5FAFF;
+                    }
+                }
+            }
+
+
+
+            .end-aside{
+                width: 100%;
+                @include display(space-between,flex-start,column);
+                padding: 0rem 2.4rem;
+                gap: 1.5rem;
+
+                .them{
+                    width: 100%;
+                    padding: .3rem .3rem;
+                    background-color: #F7F7F7;
+                    border-radius: 8px;
+                    @include display(center,center,row);
+
+                    p{
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #808080;
+                    }
+
+                    input[type=radio]{
+                        display: none;
+                    }
+
+                    
+                    input[type=radio]:checked + label{
+                        background-color: #FFFFFF;
+
+                        p{
+                            color: #525252;
+                        }
+                    }
+
+                    label{
+                        width: 100%;
+                        @include display(flex-start,center,row);
+                        padding:.3rem .6rem ;
+                        gap: .6rem;
+                        border-radius: 6px;
+
+
+                    }
+                }
+
+
+                .line{
+                    width: 100%;
+                    height: 1px;
+                    background-color: #E9E9E9;
+                }
+
+                .exit{
+                    width: 100%;
+                    @include display(flex-start,center,row);
+                    gap: 1rem;
+
+                    p{
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #525252;
+                    }
+                }
+
+            }
+        }
+
+    }
+    
+
+}

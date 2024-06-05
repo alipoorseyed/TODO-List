@@ -1,0 +1,159 @@
+@font-face {
+  font-family: "Yekan";
+  src: url("./fonts/B_Yekan/Yekan.ttf") format("truetype");
+}
+@media (max-width: 4000px) {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    direction: rtl;
+    font-family: "Yekan";
+    color: #FFFFFF;
+  }
+  .span-div {
+    width: 100%;
+  }
+  main {
+    width: 100%;
+    padding: 1.25rem 1.25rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: row;
+  }
+  main .aside-div {
+    width: 272px;
+    padding: 1.5rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 58.5px 0px rgba(0, 0, 0, 0.0588235294);
+    border-radius: 16px;
+  }
+  main .aside-div .start-aside {
+    padding: 0rem 2.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  main .aside-div .start-aside img {
+    width: 50px;
+    height: 50px;
+  }
+  main .aside-div .start-aside .start-aside-def {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  main .aside-div .start-aside .start-aside-def h4 {
+    font-size: 18px;
+    font-weight: 800;
+    text-align: right;
+    color: #242424;
+  }
+  main .aside-div .start-aside .start-aside-def p {
+    font-size: 14px;
+    font-weight: 600px;
+    color: #7D7D7F;
+  }
+  main .aside-div .mid-aside {
+    padding: 0rem 1.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  main .aside-div .mid-aside a {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding: 0.75rem 1.2rem 0.75rem 0;
+    border-radius: 8px;
+    gap: 1rem;
+    text-decoration: none;
+  }
+  main .aside-div .mid-aside a p {
+    color: #525252;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  main .aside-div .mid-aside a:hover {
+    background-color: #F5FAFF;
+  }
+  main .aside-div .end-aside {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0rem 2.4rem;
+    gap: 1.5rem;
+  }
+  main .aside-div .end-aside .them {
+    width: 100%;
+    padding: 0.3rem 0.3rem;
+    background-color: #F7F7F7;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  main .aside-div .end-aside .them p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #808080;
+  }
+  main .aside-div .end-aside .them input[type=radio] {
+    display: none;
+  }
+  main .aside-div .end-aside .them input[type=radio]:checked + label {
+    background-color: #FFFFFF;
+  }
+  main .aside-div .end-aside .them input[type=radio]:checked + label p {
+    color: #525252;
+  }
+  main .aside-div .end-aside .them label {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding: 0.3rem 0.6rem;
+    gap: 0.6rem;
+    border-radius: 6px;
+  }
+  main .aside-div .end-aside .line {
+    width: 100%;
+    height: 1px;
+    background-color: #E9E9E9;
+  }
+  main .aside-div .end-aside .exit {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  main .aside-div .end-aside .exit p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #525252;
+  }
+}/*# sourceMappingURL=style.css.map */
