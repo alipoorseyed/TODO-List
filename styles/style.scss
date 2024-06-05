@@ -26,13 +26,18 @@
 
     main{
         width: 100%;
-        padding: 1.25rem 1.25rem;
-        min-height: 100vh;
-        @include display(flex-start,stretch,row);
+        @include display(flex-start,center,row);
+
+        padding: 48px 344px 48px 60px;
 
 
         .aside-div{
             width: 272px;
+            position: fixed;
+            height: 740px;
+            transform: translate(0,-50%);
+            top: 50%;
+            right: 12px;
              padding : 1.5rem 0rem;
             @include display(space-between,flex-start,column);
             color:  #FFFFFF;  
@@ -63,7 +68,7 @@
                     p{
                         font-size: 14px;
                         font-weight: 600px;
-                        color: #7D7D7F;                        ;
+                        color: #7D7D7F;                     
                     }
                 }
             }
@@ -159,6 +164,162 @@
                 }
 
             }
+        }
+
+        .To-do{
+            width: 100%;
+            @include display(space-between,center,column);
+            gap: 1rem;
+
+            .To-do-title{
+                width: 100%;
+                @include display(flex-start,flex-start,column);
+                gap: .1rem;
+
+                h2{
+                    font-size: 20px;
+                    font-weight: 800;
+                    color: #242424;
+                }
+
+                p{
+                    font-size: 14px;
+                    font-weight: 800;
+                    color: #696969;
+                }
+            }
+
+
+            .To-do-add-button{
+                width: 100%;
+                @include display(flex-start,center,row);
+                gap: .8rem;
+                padding: .8rem 1.5rem;
+                border: 1px dashed  #CCCCCC;
+                border-radius: 10px;
+
+                p{
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #007BFF;
+                }
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+
+            .To-do-add-div{
+                width: 100%;
+                @include display(space-between,center,column);
+                gap: 1rem;
+                border: 1px solid #E9E9E9;
+                background-color: #FFFFFF;
+                border-radius: 12px;
+                box-shadow: 0px 4px 58.5px 0px #0000000F;
+
+                .up{
+                    width: 100%;
+                    padding: 1rem 1.5rem;
+                    @include display(space-between,flex-start,column);
+                    gap: 1rem;
+
+                    input{
+                        border: none;
+                        outline-style: none;
+                        width: 100%;
+                        &:nth-of-type(1){
+
+                            font-size: 18px;
+                            font-weight: 700;
+                            color: #323233;
+                            &::placeholder{
+                                color: #7D7D7F;   
+                            }
+                        }
+
+                        &:nth-of-type(2){
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: #646466;
+                            &::placeholder{
+                                color: #AFAEB2; 
+                            }
+                        }
+
+
+                    }
+
+                    div{
+                        @include display(center,center,row);
+                        padding: .3rem .4rem;
+                        box-shadow: 0px 4px 4px 0px #00000040;
+                        border: 1px solid #E9E9E9;
+                        border-radius: 4px;
+                        gap: .5rem;
+                        p{
+                            font-size: 15px;
+                        font-weight: 600;
+                        color: #AFAEB2;
+                        }
+
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+
+                }
+
+                .mid{
+                    width: 100%;
+                    height: 1px;
+                    background-color: #E9E9E9;
+                }
+
+                .down{
+                    padding: 0rem 1.5rem 1rem 1.5rem;
+                    width: 100%;
+                    @include display(flex-end,center,row);
+
+                    div{
+                        padding: .4rem .6rem;
+                        background-color: #007BFF;
+                        opacity: 60%;
+                        border-radius: 6px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #FFFFFF;
+
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .To-do-pic{
+                width: 100%;
+                @include display(space-between,center,column);
+                gap: .3rem;
+                margin-top: 1rem;
+                img{
+                    margin-bottom: 1rem;
+                }
+                
+                h4{
+                    font-size: 16px;
+                    font-weight: 800;
+                    color: #7D7D7F;
+                }
+
+                p{
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #AFAEB2;
+                }
+            }
+
         }
 
     }
