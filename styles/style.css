@@ -207,10 +207,7 @@
   }
   main .To-do .To-do-add-div {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
+    display: none;
     gap: 1rem;
     border: 1px solid #E9E9E9;
     background-color: #FFFFFF;
@@ -253,7 +250,7 @@
   main .To-do .To-do-add-div .up input:nth-of-type(2)::placeholder {
     color: #AFAEB2;
   }
-  main .To-do .To-do-add-div .up div {
+  main .To-do .To-do-add-div .up > div:nth-of-type(1) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -264,13 +261,46 @@
     border-radius: 4px;
     gap: 0.5rem;
   }
-  main .To-do .To-do-add-div .up div p {
+  main .To-do .To-do-add-div .up > div:nth-of-type(1) p {
     font-size: 15px;
     font-weight: 600;
     color: #AFAEB2;
   }
-  main .To-do .To-do-add-div .up div:hover {
+  main .To-do .To-do-add-div .up > div:nth-of-type(1):hover {
     cursor: pointer;
+  }
+  main .To-do .To-do-add-div .up .priority {
+    display: none;
+    gap: 1rem;
+    box-shadow: 0px 12px 24px -6px rgba(20, 20, 25, 0.0588235294);
+    border-radius: 8px;
+    border: 1px solid #EBEDEF;
+    padding: 0.6rem 0.8rem;
+    background-color: #FFFFFF;
+  }
+  main .To-do .To-do-add-div .up .priority div:nth-child(odd) {
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+  }
+  main .To-do .To-do-add-div .up .priority div:nth-child(odd):hover {
+    cursor: pointer;
+  }
+  main .To-do .To-do-add-div .up .priority div:nth-child(even) {
+    align-self: stretch;
+    width: 0.1px;
+    background-color: #EBEDEF;
+  }
+  main .To-do .To-do-add-div .up .priority .priority-low {
+    background-color: #C3FFF1;
+    color: #11A483;
+  }
+  main .To-do .To-do-add-div .up .priority .priority-medium {
+    background-color: #FFEFD6;
+    color: #FFAF37;
+  }
+  main .To-do .To-do-add-div .up .priority .priority-high {
+    background-color: #FFE2DB;
+    color: #FF5F37;
   }
   main .To-do .To-do-add-div .mid {
     width: 100%;
@@ -318,5 +348,84 @@
     font-size: 14px;
     font-weight: 600;
     color: #AFAEB2;
+  }
+  main .ToDO-List-item-span {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .To-do-add-div-show {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-direction: column !important;
+  }
+  .To-do-pic-show {
+    display: none !important;
+  }
+  .To-do-priority-show {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    flex-direction: row !important;
+  }
+  .new_priority_tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.3rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+  }
+  .new_priority_tag img:hover {
+    cursor: pointer;
+  }
+  .To-do-tag-show {
+    display: none !important;
+  }
+  .transform90 img {
+    transform: rotate(90deg);
+  }
+  .priority_in_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.3rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+  }
+  .todoList_span_div {
+    width: 100%;
+    padding: 1.5rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .todoList_span_div .todoList_span_div_right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  .todoList_span_div .todoList_span_div_right .todoList_span_div_right_def {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .todoList_span_div .todoList_span_div_right .todoList_span_div_right_def .todoList_span_div_right_def_top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.8rem;
   }
 }/*# sourceMappingURL=style.css.map */

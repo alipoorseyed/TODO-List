@@ -212,7 +212,7 @@
 
             .To-do-add-div{
                 width: 100%;
-                @include display(space-between,center,column);
+                display: none;
                 gap: 1rem;
                 border: 1px solid #E9E9E9;
                 background-color: #FFFFFF;
@@ -251,7 +251,8 @@
 
                     }
 
-                    div{
+                    & > div{
+                        &:nth-of-type(1){
                         @include display(center,center,row);
                         padding: .3rem .4rem;
                         box-shadow: 0px 4px 4px 0px #00000040;
@@ -266,6 +267,51 @@
 
                         &:hover{
                             cursor: pointer;
+                        }
+                    }
+                    }
+
+                    .priority{
+                        // @include display(space-between,center,row);
+                        display: none;
+                        gap: 1rem;
+                        box-shadow: 0px 12px 24px -6px #1414190F;
+                        border-radius: 8px;
+                        border: 1px solid #EBEDEF;
+                        padding: .6rem .8rem;
+                        background-color: #FFFFFF;
+
+                        div{
+                            &:nth-child(odd){
+                                padding: .2rem .4rem;
+                                border-radius: 4px;
+
+                                &:hover{
+                                    cursor: pointer;
+                                }
+                            }
+
+
+                            &:nth-child(even){
+                                align-self: stretch;
+                                width: .1px;
+                                background-color: #EBEDEF;
+                            }
+                        }
+
+                        .priority-low{
+                            background-color: #C3FFF1;
+                            color: #11A483;
+                        }
+
+                        .priority-medium{
+                            background-color: #FFEFD6;
+                            color: #FFAF37;
+                        }
+
+                        .priority-high{
+                            background-color: #FFE2DB;
+                            color: #FF5F37;
                         }
                     }
 
@@ -322,7 +368,92 @@
 
         }
 
+
+        .ToDO-List-item-span{
+            width: 100%;
+            @include display(space-between,center,column);
+            gap: 1.5rem;
+        }
+
     }
+
+    .To-do-add-div-show{
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-direction: column !important;
+    }
+
+    .To-do-pic-show{
+        display: none !important;
+    }
+
+    .To-do-priority-show{
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        flex-direction: row !important;
+    }
+
+    .new_priority_tag{
+        @include display(center,center,row);
+        gap: .3rem;
+        padding: .2rem .4rem;
+        border-radius: 4px;
+
+        img{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .To-do-tag-show{
+        display: none !important;
+    }
+
+    .transform90{
+        img{
+            transform: rotate(90deg);
+        }
+    }
+
+    .priority_in_list{
+        @include display(center,center,row);
+        gap: .3rem;
+        padding: .2rem .4rem;
+        border-radius: 4px;
+    }
+
+
+    .todoList_span_div{
+        width: 100%;
+        padding: 1.5rem 0rem;
+        @include display(space-between,center,row);
+
+        .todoList_span_div_right{
+
+            @include display(flex-start,stretch,row);
+            gap: 1.5rem;
+
+            .todoList_span_div_right_def{
+                @include display(space-between,flex-start,column);
+                gap: 1rem;
+
+                .todoList_span_div_right_def_top{
+                    @include display(flex-start,center,row);
+                    gap: .8rem;
+                }
+            }
+
+        }
+
+        .todoList_span_div_left{
+
+        }
+
+    }
+
     
 
 }
