@@ -32,6 +32,7 @@ function todo_add_popup(){
     todo_priority_tag.classList.remove("transform90");
     input_title.value = "";
     input_def.value = "";
+    todo_submit.innerHTML = "اضافه کردن تسک";
 
     if(document.getElementsByClassName("new_priority_tag")[0]!==undefined){
         document.getElementsByClassName("new_priority_tag")[0].remove();
@@ -214,6 +215,8 @@ function todo_add_submit(){
         if(todo_list_items.length===0){
             todo_pic.classList.remove("To-do-pic-show");
         }
+
+        task_todo_text.innerHTML = `${todo_list_items.length} تسک را باید انجام دهید .`;
     }
 
 
@@ -266,15 +269,6 @@ function todo_add_submit(){
 
     
 
-    let edit_div_span = document.getElementsByClassName("To-do-add-div")[0];
-    edit_div_span.className = "edit-div-span";
-    edit_div_span.querySelector(".down div").innerHTML = "ویرایش تسک";
-    todoList_span_div.insertAdjacentElement('afterend', edit_div_span);
-
-    edit_image.addEventListener("click",edit_function);
-    function edit_function(){
-        edit_div_span.classList.toggle("edit-div-span-show");
-    }
 
 
     
@@ -283,4 +277,35 @@ function todo_add_submit(){
 
     task_todo_text.innerHTML = `${todo_list_items.length} تسک را باید انجام دهید .`;
     todo_add_div.classList.remove("To-do-add-div-show");
+    todo_add_button.insertAdjacentElement('afterend' , todo_add_div);
+
+
+
+
+    
+    
+
+    edit_image.addEventListener("click",edit_function);
+    function edit_function(){
+        let edit_div_span = document.getElementsByClassName("To-do-add-div")[0];
+        todo_submit.innerHTML = "ویرایش تسک";
+        input_title.value = todoList_span_div_right_def_top_h4.innerHTML;
+        input_def.value = todoList_span_div_right_def_bottom.innerHTML;
+        edit_div_span.querySelector(".new_priority_tag p").innerHTML = priority_value.innerHTML;
+        edit_div_span.querySelector(".new_priority_tag").style.backgroundColor = todoList_span_div_right_line.style.backgroundColor;
+        edit_div_span.querySelector(".new_priority_tag").style.color = todoList_span_div_right_def_top_priority.style.color;      
+        todoList_span_div.insertAdjacentElement('afterend', edit_div_span);
+        edit_div_span.classList.toggle("To-do-add-div-show");
+        for(let i=0 ; i<todo_list_items.length ; i++){
+            if(todo_list_items[i]===todoList_span_div){
+                todo_list_items[i].remove();
+                todo_list_items.splice(i,1);
+                break;
+            }
+        }
+    }
+
+
+
+
 }
