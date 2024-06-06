@@ -10,6 +10,7 @@ let todo_submit = document.querySelector(".down div");
 let input_title = document.querySelector(".up input:nth-child(1)");
 let input_def= document.querySelector(".up input:nth-child(2)");
 let Todo_item_span = document.getElementsByClassName("ToDO-List-item-span")[0];
+let task_todo_text = document.querySelector(".To-do-title p")
 
 
 
@@ -143,6 +144,7 @@ function todo_add_submit(){
     let todoList_span_div_right_def_top_priority = document.getElementsByClassName("new_priority_tag")[0].cloneNode(true);
     todoList_span_div_right_def_top_priority.className = "priority_in_list";
     let image = todoList_span_div_right_def_top_priority.querySelector("img");
+    let priority_value = todoList_span_div_right_def_top_priority.querySelector("p");
     image.remove();
 
 
@@ -186,6 +188,9 @@ function todo_add_submit(){
 
 
 
+
+
+
     todoList_span_div_left_image.addEventListener("click" , editremove);
     function editremove(){
         editremove_span_div.classList.toggle("editremove_span_div_show");
@@ -198,10 +203,35 @@ function todo_add_submit(){
     // Todo_item_span.appendChild(todoList_span_div);
 
 
-    todo_list_items.push(todoList_span_div);
-    console.log(todo_list_items.length)
-    console.log(todo_list_items);
+    let index = -1;
+     for(let i=0 ; i<todo_list_items.length ; i++){
+          let priority_value_index = todo_list_items[i].querySelector(".todoList_span_div_right .todoList_span_div_right_def_top div p"); 
+          if(priority_value.innerHTML==="بالا"){
+            if(priority_value_index.innerHTML==="متوسط" || priority_value_index.innerHTML==="پایین"){
+                index = i;
+                break;
+            }
+          }else if(priority_value.innerHTML==="متوسط"){
+            if(priority_value_index.innerHTML==="پایین"){
+                index = i;
+                break;
+            }
+          }
+     }
+
+     if(index===-1){
+        todo_list_items.push(todoList_span_div);
+     }else{
+        todo_list_items.splice(index,0,todoList_span_div);
+     }
+
+    
+
+    // todo_list_items.push(todoList_span_div);
+    task_todo_text.innerHTML = `${todo_list_items.length} تسک را باید انجام دهید .`;
+
     for (let i = 0; i < todo_list_items.length; i++) {
-        Todo_item_span.appendChild(todo_list_items[i].cloneNode(true));
+        Todo_item_span.appendChild(todo_list_items[i]);
     }
+
 }
