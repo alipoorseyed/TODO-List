@@ -349,7 +349,34 @@
     font-weight: 600;
     color: #AFAEB2;
   }
+  main .To-do .done-title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin-top: 4rem;
+  }
+  main .To-do .done-title h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #242424;
+  }
+  main .To-do .done-title p {
+    font-size: 14px;
+    font-weight: 800;
+    color: #696969;
+  }
   main .ToDO-List-item-span {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  main .done-List-item-span {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -485,5 +512,56 @@
     justify-content: space-between;
     align-items: stretch;
     flex-direction: row;
+  }
+  .todo_done_span_div {
+    width: 100%;
+    padding: 1.5rem 0rem;
+    background-color: #FFFFFF;
+    border: 1px solid #E9E9E9;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .todo_done_span_div .todoList_span_div_right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  .todo_done_span_div .todoList_span_div_right .todoList_span_div_right_def {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .todo_done_span_div .todoList_span_div_right .todoList_span_div_right_def .todoList_span_div_right_def_top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.8rem;
+  }
+  .todo_done_span_div .todoList_span_div_right .todoList_span_div_right_def .todoList_span_div_right_def_top h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #242424;
+    text-decoration: line-through;
+  }
+  .todo_done_span_div .todoList_span_div_right .todoList_span_div_right_line {
+    transform: translate(2px, 0);
+    width: 5px;
+    border-radius: 14px;
+  }
+  .todo_done_span_div .todoList_span_div_left {
+    padding-left: 1.5rem;
+  }
+  .todo_done_span_div .todoList_span_div_left img:hover {
+    cursor: pointer;
   }
 }/*# sourceMappingURL=style.css.map */

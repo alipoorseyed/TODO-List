@@ -10,12 +10,16 @@ let todo_submit = document.querySelector(".down div");
 let input_title = document.querySelector(".up input:nth-child(1)");
 let input_def= document.querySelector(".up input:nth-child(2)");
 let Todo_item_span = document.getElementsByClassName("ToDO-List-item-span")[0];
-let task_todo_text = document.querySelector(".To-do-title p")
+let task_todo_text = document.querySelector(".To-do-title p");
+let done_item_span = document.getElementsByClassName("done-List-item-span")[0];
+let done_item_text = document.querySelector(".done-title p");
+
 
 
 
 
 let todo_list_items = [];
+let todo_list_items_done = [];
 let prioritystring = "";
 // let counter = 0;
 
@@ -217,6 +221,42 @@ function todo_add_submit(){
         }
 
         task_todo_text.innerHTML = `${todo_list_items.length} تسک را باید انجام دهید .`;
+    }
+
+
+
+
+
+
+
+
+
+
+    todoList_span_div_right_def_top_check.addEventListener("click", todo_done);
+    function todo_done(){
+        let todo_done_span_div = todoList_span_div.cloneNode(true);
+        todo_done_span_div.className = "todo_done_span_div";
+        todo_done_span_div.querySelector(".todoList_span_div_right_def > p").remove();
+        todo_done_span_div.querySelector(".todoList_span_div_right_def_top div").remove();
+        done_item_span.appendChild(todo_done_span_div);
+        todo_list_items_done.push(todo_done_span_div);
+        done_item_text.innerHTML = `${todo_list_items_done.length} انجام شده است .`;
+
+        for(let i=0 ; i<todo_list_items.length ; i++){
+            if(todo_list_items[i]===todoList_span_div){
+                todo_list_items[i].remove();
+                todo_list_items.splice(i,1);
+                break;
+            }
+        }
+
+        
+        if(todo_list_items.length===0){
+            todo_pic.classList.remove("To-do-pic-show");
+        }
+
+        task_todo_text.innerHTML = `${todo_list_items.length} تسک را باید انجام دهید .`;
+
     }
 
 
