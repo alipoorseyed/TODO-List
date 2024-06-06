@@ -272,7 +272,6 @@
                     }
 
                     .priority{
-                        // @include display(space-between,center,row);
                         display: none;
                         gap: 1rem;
                         box-shadow: 0px 12px 24px -6px #1414190F;
@@ -425,11 +424,20 @@
         border-radius: 4px;
     }
 
+    .down-bagcolor{
+            opacity: 100% !important;
+    }
+
 
     .todoList_span_div{
         width: 100%;
         padding: 1.5rem 0rem;
-        @include display(space-between,center,row);
+        background-color: #FFFFFF;
+        border: 1px solid #E9E9E9;
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        @include display(flex-start,center,row);
 
         .todoList_span_div_right{
 
@@ -443,15 +451,76 @@
                 .todoList_span_div_right_def_top{
                     @include display(flex-start,center,row);
                     gap: .8rem;
+
+                    h4{
+                        font-size: 17px;
+                        font-weight: 700;
+                        color: #242424;
+                    }
+
                 }
+
+                & > p{
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #727272;
+                    padding-right: 1.7rem;
+                }
+            }
+
+            .todoList_span_div_right_line{
+                transform: translate(2px,0);
+                width: 5px;
+                border-radius: 14px;
             }
 
         }
 
         .todoList_span_div_left{
 
+            position: absolute;
+                left: 20px;
+                top: 20px;
+
+            img{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
         }
 
+    }
+
+
+    .editremove_span_div{
+        position: absolute;
+        left: 100%;
+        top: 100%;
+        display: none;
+        padding: .2rem .3rem;
+        gap: .6rem;
+        background-color: #FFFFFF;
+        border: 1px solid #EBEDEF;
+        border-radius: 8px;
+        box-shadow: 0px 12px 24px -6px #1414190F;
+
+        div{
+            width: 1px;
+            background-color: #EBEDEF;
+            border-radius: 8px;
+        }
+
+        img{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+
+    .editremove_span_div_show{
+        @include display(space-between,stretch,row);
     }
 
     

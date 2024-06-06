@@ -16,6 +16,7 @@ let Todo_item_span = document.getElementsByClassName("ToDO-List-item-span")[0];
 
 let todo_list_items = [];
 let prioritystring = "";
+let counter = 0;
 
 
 
@@ -63,6 +64,12 @@ todo_priority_medium.addEventListener("click",todo_add_priority);
 todo_priority_low.addEventListener("click",todo_add_priority);
 
 function todo_add_priority(event){
+
+
+    if(input_def.value.trim() !== "" || input_title.value.trim() !== ""){
+        todo_submit.classList.add("down-bagcolor");
+    }
+    
     prioritystring = event.target.innerHTML;
 
     let new_priority_tag = document.createElement("div");
@@ -84,12 +91,28 @@ function todo_add_priority(event){
     new_priority_tag_img.addEventListener("click",function(){
         new_priority_tag.remove();
         todo_priority_tag.classList.remove("To-do-tag-show");
+        todo_submit.classList.remove("down-bagcolor");
     });
 
     todo_priority_div.classList.remove("To-do-priority-show");
     todo_priority_tag.classList.add("To-do-tag-show");
     todo_priority_tag.classList.remove("transform90");
 
+}
+
+
+
+
+
+input_def.addEventListener("input", checkfuncion);
+input_title.addEventListener("input" , checkfuncion);
+
+function checkfuncion(){
+    if(input_def.value.trim() !== "" && input_title.value.trim() !== "" && document.getElementsByClassName("new_priority_tag")[0]!==undefined){
+        todo_submit.classList.add("down-bagcolor");
+    }else{
+        todo_submit.classList.remove("down-bagcolor");
+    }
 }
 
 
@@ -109,6 +132,7 @@ function todo_add_submit(){
     let todoList_span_div_right = document.createElement("div");
     let todoList_span_div_left = document.createElement("div");
     let todoList_span_div_left_image = document.createElement("img");
+    todoList_span_div_left_image.src = "./images/Frame 33317.svg"
     let todoList_span_div_right_line = document.createElement("div");
     let todoList_span_div_right_def = document.createElement("div");
     let todoList_span_div_right_def_top = document.createElement("div");
@@ -143,8 +167,41 @@ function todo_add_submit(){
     todoList_span_div_right_def.setAttribute("class" , "todoList_span_div_right_def");
     todoList_span_div_right_def_top.setAttribute("class" , "todoList_span_div_right_def_top");
     todoList_span_div_left.setAttribute("class" , "todoList_span_div_left");
-    todoList_span_div_left_image.setAttribute("class" , "todoList_span_div_left_image");
     console.log(todoList_span_div);
 
-    Todo_item_span.appendChild(todoList_span_div);
+    todoList_span_div_right_line.style.backgroundColor = document.getElementsByClassName("new_priority_tag")[0].style.backgroundColor;
+
+
+    let editremove_span_div = document.createElement("div")
+    let trash_image = document.createElement("img");
+    let edit_image = document.createElement("img");
+    let editremove_line = document.createElement("div");
+    trash_image.src = "./images/tabler_trash-x.svg"
+    edit_image.src = "./images/tabler_edit.svg"
+    editremove_span_div.appendChild(trash_image);
+    editremove_span_div.appendChild(editremove_line);
+    editremove_span_div.appendChild(edit_image);
+    editremove_span_div.setAttribute("class","editremove_span_div");
+    todoList_span_div_left.appendChild(editremove_span_div);
+
+
+
+    todoList_span_div_left_image.addEventListener("click" , editremove);
+    function editremove(){
+        editremove_span_div.classList.toggle("editremove_span_div_show");
+    }
+
+    // todoList_span_div.setAttribute("id" , `${counter}`);
+    // counter++;
+
+
+    // Todo_item_span.appendChild(todoList_span_div);
+
+
+    todo_list_items.push(todoList_span_div);
+    console.log(todo_list_items.length)
+    console.log(todo_list_items);
+    for (let i = 0; i < todo_list_items.length; i++) {
+        Todo_item_span.appendChild(todo_list_items[i].cloneNode(true));
+    }
 }
