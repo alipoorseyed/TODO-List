@@ -17,7 +17,7 @@ let task_todo_text = document.querySelector(".To-do-title p")
 
 let todo_list_items = [];
 let prioritystring = "";
-let counter = 0;
+// let counter = 0;
 
 
 
@@ -169,7 +169,6 @@ function todo_add_submit(){
     todoList_span_div_right_def.setAttribute("class" , "todoList_span_div_right_def");
     todoList_span_div_right_def_top.setAttribute("class" , "todoList_span_div_right_def_top");
     todoList_span_div_left.setAttribute("class" , "todoList_span_div_left");
-    console.log(todoList_span_div);
 
     todoList_span_div_right_line.style.backgroundColor = document.getElementsByClassName("new_priority_tag")[0].style.backgroundColor;
 
@@ -196,11 +195,45 @@ function todo_add_submit(){
         editremove_span_div.classList.toggle("editremove_span_div_show");
     }
 
+
+
+
+
+
+
+    trash_image.addEventListener("click" , trash_function);
+    function trash_function(){
+        for(let i=0 ; i<todo_list_items.length ; i++){
+            if(todo_list_items[i]===todoList_span_div){
+                todo_list_items[i].remove();
+                todo_list_items.splice(i,1);
+                break;
+            }
+        }
+
+        if(todo_list_items.length===0){
+            todo_pic.classList.remove("To-do-pic-show");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // todoList_span_div.setAttribute("id" , `${counter}`);
     // counter++;
 
-
-    // Todo_item_span.appendChild(todoList_span_div);
 
 
     let index = -1;
@@ -225,13 +258,29 @@ function todo_add_submit(){
         todo_list_items.splice(index,0,todoList_span_div);
      }
 
-    
-
-    // todo_list_items.push(todoList_span_div);
-    task_todo_text.innerHTML = `${todo_list_items.length} تسک را باید انجام دهید .`;
-
     for (let i = 0; i < todo_list_items.length; i++) {
         Todo_item_span.appendChild(todo_list_items[i]);
     }
 
+
+
+    
+
+    let edit_div_span = document.getElementsByClassName("To-do-add-div")[0];
+    edit_div_span.className = "edit-div-span";
+    edit_div_span.querySelector(".down div").innerHTML = "ویرایش تسک";
+    todoList_span_div.insertAdjacentElement('afterend', edit_div_span);
+
+    edit_image.addEventListener("click",edit_function);
+    function edit_function(){
+        edit_div_span.classList.toggle("edit-div-span-show");
+    }
+
+
+    
+
+
+
+    task_todo_text.innerHTML = `${todo_list_items.length} تسک را باید انجام دهید .`;
+    todo_add_div.classList.remove("To-do-add-div-show");
 }
