@@ -27,7 +27,7 @@
   main .aside-div {
     width: 272px;
     position: fixed;
-    height: 740px;
+    height: 96vh;
     transform: translate(0, -50%);
     top: 50%;
     right: 12px;
